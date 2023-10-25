@@ -19,13 +19,13 @@ def test_scroll_into_view_if_needed_element_already_in_viewport(page: Page):
     """
     Test verifies if the Context Menu section is visible and no scroll happens
     """        
-    age.goto('https://www.lambdatest.com/selenium-playground/')
-    ase_locator = page.get_by_role('link', name=" Context Menu")
-    xpect(base_locator).to_be_visible()
-    age.pause()
-    ase_locator.scroll_into_view_if_needed()
-    age.pause()        
-    age.close()
+    page.goto('https://www.lambdatest.com/selenium-playground/')
+    base_locator = page.get_by_role('link', name=" Context Menu")
+    expect(base_locator).to_be_visible()
+    page.pause()
+    base_locator.scroll_into_view_if_needed()
+    page.pause()        
+    page.close()
 
 
 def test_scroll_using_mouse_wheel(page: Page):  
